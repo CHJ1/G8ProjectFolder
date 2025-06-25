@@ -1,5 +1,5 @@
 ---
-title: "G8ProjectFolder"
+title: "Group 8's Project"
 ---
 
 This is a Quarto website.

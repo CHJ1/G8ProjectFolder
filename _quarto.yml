@@ -2,19 +2,20 @@ project:
   type: website
 
 website:
-  title: "G8ProjectFolder"
+  title: "Group 8 Project: VAST Challenge 2025 Mini-Challenge 3"
   navbar:
     left:
       - href: index.qmd
         text: Home
+    right:
       - about.qmd
+      
   sidebar:
     - id: main
       title: "Navigation"
       style: "docked"
       contents:
         - index.qmd
-        - about.qmd
 
 format:
   html:
