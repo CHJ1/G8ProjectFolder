@@ -8,6 +8,13 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    - id: main
+      title: "Navigation"
+      style: "docked"
+      contents:
+        - index.qmd
+        - about.qmd
 
 format:
   html:
