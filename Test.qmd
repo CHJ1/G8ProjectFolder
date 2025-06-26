@@ -7,6 +7,7 @@ format:
   html:
     resources:
       - shinylive-sw.js
+      - data/MC3_graph.json
 ---
 
 ```{shinylive-r}      
