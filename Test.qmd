@@ -9,7 +9,7 @@ format:
       - shinylive-sw.js
 ---
 
-      
+```{shinylive-r}      
 #| standalone: true
 
 # Load required packages
@@ -216,5 +216,5 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
-
+```
 
