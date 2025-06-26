@@ -17,9 +17,9 @@ website:
       contents:
         - index.qmd
         - text: "Communication Patterns Analysis"
-          href: Test copy.qmd
-        - text: "Hands-on Exercise 2"
-          href: "Hands-on_Ex/Hands-on_Ex02/Hands-on_Ex02.html"
+          href: Communication Patterns Analysis.qmd
+        - text: "Clustering"
+          href: "xxx.html"
 
 format:
   html:

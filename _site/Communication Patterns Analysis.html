@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-06-26">
 
-<title>Group 8 Project: VAST Challenge 2025 Mini-Challenge 3 - Test Shinylive</title>
+<title>Group 8 Project: VAST Challenge 2025 Mini-Challenge 3 - Communication Patterns Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Test copy.html">Communication Patterns Analysis</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Communication Patterns Analysis.html">Communication Patterns Analysis</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -127,14 +128,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Test copy.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Communication Patterns Analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Communication Patterns Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Hands-on_Ex/Hands-on_Ex02/Hands-on_Ex02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hands-on Exercise 2</span></a>
+  <a href="./xxx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clustering</span></a>
   </div>
 </li>
     </ul>
@@ -150,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Test Shinylive</h1>
+<h1 class="title">Communication Patterns Analysis</h1>
 </div>
 
 
@@ -158,6 +159,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 26, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -169,9 +176,211 @@ ul.task-list li input[type="checkbox"] {
 #|   shinylive does not work in self-contained HTML documents.
 #|   Please set `embed-resources: false` in your metadata.
 #| standalone: true
+
+# Load required packages
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(DT)
+library(visNetwork)
+library(lubridate)
+library(tidygraph)
+library(ggraph)
+library(tidyverse)
 library(jsonlite)
-x &lt;- fromJSON("https://raw.githubusercontent.com/CHJ1/G8ProjectFolder/main/data/MC3_graph.json")
-print(str(x))</code></pre>
+
+# Data import and preparation
+MC3 &lt;- fromJSON("https://raw.githubusercontent.com/CHJ1/G8ProjectFolder/main/data/MC3_graph.json")
+mc3_nodes &lt;- as_tibble(MC3$nodes)
+mc3_edges &lt;- as_tibble(MC3$edges)
+
+# Clean nodes and edges
+mc3_nodes_cleaned &lt;- mc3_nodes %&gt;%
+  mutate(id = as.character(id)) %&gt;%
+  filter(!is.na(id)) %&gt;%
+  distinct(id, .keep_all = TRUE) %&gt;%
+  select(-thing_collected)
+
+mc3_edges_cleaned &lt;- mc3_edges %&gt;%
+  rename(from_id = source, to_id = target) %&gt;%
+  mutate(across(c(from_id, to_id), as.character)) %&gt;%
+  filter(from_id %in% mc3_nodes_cleaned$id, to_id %in% mc3_nodes_cleaned$id) %&gt;%
+  filter(!is.na(from_id), !is.na(to_id))
+
+node_index_lookup &lt;- mc3_nodes_cleaned %&gt;%
+  mutate(.row_id = row_number()) %&gt;%
+  select(id, .row_id)
+
+mc3_edges_indexed &lt;- mc3_edges_cleaned %&gt;%
+  left_join(node_index_lookup, by = c("from_id" = "id")) %&gt;%
+  rename(from = .row_id) %&gt;%
+  left_join(node_index_lookup, by = c("to_id" = "id")) %&gt;%
+  rename(to = .row_id) %&gt;%
+  select(from, to, is_inferred, type) %&gt;%
+  filter(!is.na(from) &amp; !is.na(to))
+
+used_node_indices &lt;- sort(unique(c(mc3_edges_indexed$from, mc3_edges_indexed$to)))
+mc3_nodes_final &lt;- mc3_nodes_cleaned %&gt;%
+  slice(used_node_indices) %&gt;%
+  mutate(new_index = row_number())
+
+old_to_new_index &lt;- tibble(
+  old_index = used_node_indices,
+  new_index = seq_along(used_node_indices)
+)
+
+mc3_edges_final &lt;- mc3_edges_indexed %&gt;%
+  left_join(old_to_new_index, by = c("from" = "old_index")) %&gt;%
+  rename(from_new = new_index) %&gt;%
+  left_join(old_to_new_index, by = c("to" = "old_index")) %&gt;%
+  rename(to_new = new_index) %&gt;%
+  select(from = from_new, to = to_new, is_inferred, type)
+
+# Prepare communication events
+comm_nodes &lt;- mc3_nodes_final %&gt;%
+  filter(type == "Event", sub_type == "Communication") %&gt;%
+  mutate(timestamp = ymd_hms(timestamp)) %&gt;%
+  filter(!is.na(timestamp)) %&gt;%
+  mutate(date = as.Date(timestamp), hour = hour(timestamp))
+
+# UI
+ui &lt;- fluidPage(
+  titlePanel("Communication Patterns Analysis"),
+  sidebarLayout(
+    sidebarPanel(
+      dateRangeInput("date_filter", "Date Range:",
+        start = min(comm_nodes$date), end = max(comm_nodes$date)),
+      sliderInput("hour_filter", "Hour Range:", min = 0, max = 23, value = c(0, 23)),
+      width = 3
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Daily", plotOutput("daily_plot")),
+        tabPanel("Hourly", plotOutput("hourly_plot")),
+        tabPanel("Heatmap", plotlyOutput("heatmap")),
+        tabPanel("Messages", DTOutput("messages_table")),
+        tabPanel("Network Graph", visNetworkOutput("network_plot", height = "800px"))
+      ),
+      width = 9
+    )
+  )
+)
+
+# Server
+server &lt;- function(input, output) {
+  filtered_data &lt;- reactive({
+    comm_nodes %&gt;%
+      filter(date &gt;= input$date_filter[1],
+             date &lt;= input$date_filter[2],
+             hour &gt;= input$hour_filter[1],
+             hour &lt;= input$hour_filter[2])
+  })
+
+  output$daily_plot &lt;- renderPlot({
+    daily_counts &lt;- filtered_data() %&gt;%
+      group_by(date) %&gt;%
+      summarise(comm_count = n())
+    ggplot(daily_counts, aes(x = date, y = comm_count)) +
+      geom_col(fill = "steelblue") +
+      geom_text(aes(label = comm_count), vjust = -0.5, size = 3) +
+      geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+      scale_x_date(date_labels = "%Y-%m-%d", expand = expansion(mult = c(0.01, 0.1))) +
+      labs(title = "Daily Communication Volume", x = "Date", y = "Count") +
+      theme_minimal()
+  })
+
+  output$hourly_plot &lt;- renderPlot({
+    hourly_totals &lt;- filtered_data() %&gt;%
+      group_by(hour) %&gt;%
+      summarise(comm_count = n())
+    ggplot(hourly_totals, aes(x = hour, y = comm_count)) +
+      geom_col(fill = "steelblue") +
+      geom_text(aes(label = comm_count), vjust = -0.5, size = 3) +
+      geom_smooth(method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+      labs(title = "Hourly Communication Volume", x = "Hour", y = "Count") +
+      theme_minimal()
+  })
+
+  output$heatmap &lt;- renderPlotly({
+    hourly_counts &lt;- filtered_data() %&gt;%
+      group_by(date, hour) %&gt;%
+      summarise(comm_count = n(), .groups = "drop")
+    p &lt;- ggplot(hourly_counts, aes(
+      x = hour, y = date, fill = comm_count,
+      text = paste("Date:", date,
+                   "&lt;br&gt;Hour:", hour,
+                   "&lt;br&gt;Communications:", comm_count))) +
+      geom_tile(color = "white") +
+      scale_fill_gradient(low = "white", high = "firebrick") +
+      scale_y_date(date_labels = "%Y-%m-%d") +
+      labs(title = "Hourly Communication Patterns", x = "Hour", y = "Date") +
+      theme_minimal()
+    ggplotly(p, tooltip = "text")
+  })
+
+  output$messages_table &lt;- renderDT({
+    filtered_data() %&gt;%
+      arrange(desc(timestamp)) %&gt;%
+      mutate(Time = format(timestamp, "%Y-%m-%d %H:%M:%S")) %&gt;%
+      select(Time, Content = content)
+  }, options = list(
+      pageLength = 10,
+      autoWidth = TRUE,
+      scrollX = TRUE,
+      columnDefs = list(
+        list(width = '20%', targets = 0),
+        list(width = '80%', targets = 1)
+      )
+    ),
+    rownames = FALSE
+  )
+
+  output$network_plot &lt;- renderVisNetwork({
+    req(filtered_data())
+    peak_comm_ids &lt;- filtered_data() %&gt;% pull(new_index)
+    peak_edges &lt;- mc3_edges_final %&gt;%
+      filter(from %in% peak_comm_ids | to %in% peak_comm_ids)
+    used_indices &lt;- unique(c(peak_edges$from, peak_edges$to))
+    peak_nodes_sub &lt;- mc3_nodes_final %&gt;%
+      filter(new_index %in% used_indices) %&gt;%
+      mutate(sub_index = row_number())
+    peak_edges_sub &lt;- peak_edges %&gt;%
+      left_join(select(peak_nodes_sub, old_index = new_index, from_sub = sub_index),
+                by = c("from" = "old_index")) %&gt;%
+      left_join(select(peak_nodes_sub, old_index = new_index, to_sub = sub_index),
+                by = c("to" = "old_index")) %&gt;%
+      select(from = from_sub, to = to_sub, is_inferred, type) %&gt;%
+      filter(!is.na(from) &amp; !is.na(to)) %&gt;%
+      mutate(id = row_number(),
+             arrows = ifelse(is_inferred, "to;from", "to"),
+             dashes = is_inferred,
+             title = paste("Edge type:", type))
+    nodes_vis &lt;- peak_nodes_sub %&gt;%
+      mutate(
+        id = sub_index,
+        label = paste0(label, "\n(", type, ")"),
+        group = type,
+        title = paste0(
+          "Name: ", label, 
+          "\nType: ", type,
+          if ("sub_type" %in% names(.)) paste0("\nSubtype: ", sub_type) else "",
+          "\nConnections: ", purrr::map_dbl(sub_index, ~sum(peak_edges_sub$from == .x | peak_edges_sub$to == .x))
+        )
+      )
+    visNetwork(nodes_vis, peak_edges_sub, height = "800px", width = "100%") %&gt;%
+      visOptions(
+        highlightNearest = list(enabled = TRUE, degree = 2, hover = TRUE),
+        nodesIdSelection = TRUE,
+        selectedBy = list(variable = "group", multiple = TRUE)
+      ) %&gt;%
+      visPhysics(stabilization = TRUE) %&gt;%
+      visInteraction(navigationButtons = TRUE) %&gt;%
+      visLegend()
+  })
+}
+
+shinyApp(ui, server)</code></pre>
 
 
 
