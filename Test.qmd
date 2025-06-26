@@ -26,7 +26,7 @@ library(tidyverse)
 library(jsonlite)
 
 # Data import and preparation
-MC3 <- fromJSON("https://raw.githubusercontent.com/CHJ1/G8ProjectFolder/refs/heads/main/data/MC3_graph.json")
+MC3 <- fromJSON("https://raw.githubusercontent.com/CHJ1/G8ProjectFolder/main/data/MC3_graph.json")
 mc3_nodes <- as_tibble(MC3$nodes)
 mc3_edges <- as_tibble(MC3$edges)
 
