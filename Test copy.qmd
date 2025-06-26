@@ -1,0 +1,13 @@
+---
+title: "Test Shinylive"
+filters:
+  - shinylive
+format: html
+---
+
+```{shinylive-r}
+#| standalone: true
+library(jsonlite)
+x <- fromJSON("https://raw.githubusercontent.com/CHJ1/G8ProjectFolder/main/data/MC3_graph.json")
+print(str(x))
+```
