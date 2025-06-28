@@ -25,7 +25,6 @@ website:
             href: https://github.com/CHJ1/G8ProjectFolder
           - text: Shiny Repo
             href: https://github.com/CHJ1/G8ProjectFolder/tree/main/ShinyApp
-    right:
       - About.qmd
 
 format:
