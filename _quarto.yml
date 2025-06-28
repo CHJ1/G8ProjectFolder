@@ -7,19 +7,26 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: xxx.qmd
+        text: Proposal
+      - href: xxx.qmd
+        text: Poster
+      - href: xxx.qmd
+        text: Meeting Minutes
+      - text: Shiny
+        menu:
+          - text: User Guide
+            href: xxx.qmd
+          - text: Shiny App
+            href: https://hjportfolio.shinyapps.io/Group8ProjectVASTChallenge2025MiniChallenge3/
+      - text: GitHub
+        menu:
+          - text: Project Repo
+            href: https://github.com/CHJ1/G8ProjectFolder
+          - text: Shiny Repo
+            href: https://github.com/CHJ1/G8ProjectFolder/tree/main/ShinyApp
     right:
-      - about.qmd
-      
-  sidebar:
-    - id: main
-      title: "Navigation"
-      style: "docked"
-      contents:
-        - index.qmd
-        - text: "Communication Patterns Analysis"
-          href: Communication Patterns Analysis.qmd
-        - text: "Clustering"
-          href: "xxx.html"
+      - About.qmd
 
 format:
   html:

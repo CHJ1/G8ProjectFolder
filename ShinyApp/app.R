@@ -74,7 +74,7 @@ comm_nodes <- mc3_nodes_final %>%
   mutate(date = as.Date(timestamp),
          hour = hour(timestamp))
 
-# --- CSS for sidebar menu text wrapping ---
+# --- sidebar menu text wrapping ---
 css_code <- "
 .main-sidebar .sidebar-menu > li > a {
   white-space: normal !important;
@@ -107,7 +107,7 @@ ui <- dashboardPage(
                menuSubItem("Messages", tabName = "messages"),
                menuSubItem("Network Graph", tabName = "network")
       ),
-      # --- Clustering Section for Group Mate ---
+      # --- Clustering Section ---
       menuItem("Clustering", icon = icon("project-diagram"), startExpanded = TRUE,
                menuSubItem("Louvain Network", tabName = "louvain"),
                menuSubItem("Infomap Network", tabName = "infomap"),
@@ -170,7 +170,7 @@ ui <- dashboardPage(
                   DTOutput("performance_table"))
       )
     ),
-    # --- Make only the dashboard body white, not the sidebar ---
+    # --- Make dashboard body white ---
     tags$head(tags$style(HTML('
       .content-wrapper, .right-side {
         background: #fff !important;
@@ -193,7 +193,7 @@ ui <- dashboardPage(
 
 # --- Server ---
 server <- function(input, output, session) {
-  # --- Original Communication Visualizations ---
+  # --- Communication Visualisations ---
   filtered_data <- reactive({
     comm_nodes %>%
       filter(date >= input$date_filter[1],
@@ -304,7 +304,7 @@ server <- function(input, output, session) {
       visLegend()
   })
   
-  # --- Clustering Section (Group Mate) ---
+  # --- Clustering Section ---
   entity_nodes <- mc3_nodes_final %>%
     filter(type == "Entity", sub_type %in% c("Person", "Vessel")) %>%
     select(id, name, sub_type)
