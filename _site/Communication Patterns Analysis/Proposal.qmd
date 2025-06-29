@@ -1,6 +1,5 @@
 ---
 title: "Proposal"
-format: html
 editor: visual
 execute:
   eval: true
