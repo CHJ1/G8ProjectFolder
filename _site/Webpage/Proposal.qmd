@@ -1,5 +1,6 @@
 ---
 title: "About Us"
+format: html
 ---
 
 I will be working on the Communication Patterns Analysis module of Take-home Exercise 3. This module includes daily communication volume, hourly communication volume, a heatmap of communication patterns based on date and hour, contents of the communcations, and a communication network graph.
