@@ -1,8 +1,6 @@
 ---
-title: "Proposal"
+title: "Storyboard of Shiny Application"
 ---
-
-# Storyboard of Shiny Application
 
 The aim of our Shiny application is to identify suspicious communication patterns.
 
