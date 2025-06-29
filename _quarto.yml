@@ -7,7 +7,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: _site/Communication Patterns Analysis/Proposal.qmd
+      - href: _site/Communication Patterns Analysis/Proposal.html
         text: Proposal
       - href: xxx.qmd
         text: Poster
