@@ -1,9 +1,10 @@
 ---
-title: "About"
+title: "About Us"
 ---
 
-About this site
+We developed this website for our project for ISSS608 Visual Analytics and Applications in Term 3 of Academic Year 2024-25 in Singapore Management University under the guidance of Dr. Kam Tin Seong.
 
-```{r}
-1 + 1
-```
+## Our Group Members
+
+-   [Chan Han Jie](https://isss608-ay2024-25t3-chj1.netlify.app)
+-   [Teo Wee Siang Roy](https://iss608-first-session.netlify.app)
