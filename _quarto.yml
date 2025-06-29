@@ -7,7 +7,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: Proposal.qmd
+      - href: Proposal.html
         text: Proposal
       - href: xxx.qmd
         text: Poster
@@ -31,7 +31,7 @@ website:
 format:
   html:
     theme: Minty
-    css: styles.css
+    #css: styles.css
     toc: true
 
 editor: visual
