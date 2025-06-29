@@ -7,7 +7,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: Webpage/Proposal.qmd
+      - href: Proposal.qmd
         text: Proposal
       - href: xxx.qmd
         text: Poster
