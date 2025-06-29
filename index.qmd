@@ -2,7 +2,7 @@
 title: "Oceanus Watch: Communication Insights Around Nemo Reef"
 ---
 
-![ ](/ShinyApp/www/Logo.png){.center-img width=400px}
+![ ](/ShinyApp/www/Logo.png){width=50% fig-align="center"}
 
 This website presents an interactive Shiny dashboard designed to detect and analyse suspicious communication patterns within the Oceanus maritime environment, particularly around Nemo Reef. By combining visualisations such as daily and hourly communication charts, heat maps, and network graphs, users can easily identify anomalies in communication behaviour that may indicate coordinated or illicit activity. The platform enables analysts to filter data by date and time, uncover temporal shifts, and pinpoint periods of unusual activity.
 
