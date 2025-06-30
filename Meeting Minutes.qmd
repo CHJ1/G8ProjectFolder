@@ -19,7 +19,7 @@ Action Items:
 
 -   Each member to begin work on their assigned questions.
 
-## Meeting 2: Discussion on Technical Issues & Debugging
+## Meeting 2: Discussion on Technical Issues / Debugging & Working on Prototype
 
 Date: 31 May 2025
 
@@ -31,13 +31,19 @@ Key Discussions:
 
 -   Discussed technical issues and supported each other in debugging.
 
+-   Layout of our prototype.
+
 Decisions:
 
 -   Han Jie: To consolidate Questions 1 & 3 outputs into a unified exploratory summary.
 
+-   Han Jie to work on the communication patterns analysis section of the prototype, while Roy will work on the clustering section of the prototype.
+
 Action Items:
 
 -   Continue to work on our tasks and help each other in resolving issues.
+
+-   Complete the prototype by 15 June 2025.
 
 -   Share codes and outputs via Netlify and internal file sharing.
 
