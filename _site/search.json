@@ -165,13 +165,13 @@
     "href": "User Guide.html#algorithm-comparison",
     "title": "User Guide",
     "section": "Algorithm Comparison",
-    "text": "Algorithm Comparison\nThe bar plots on this page show:\nNumber of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is.\nModularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters.\nThis helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure."
+    "text": "Algorithm Comparison\nThe bar plots on this page show:\n\nNumber of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is.\nModularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters.\n\nThis helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure."
   },
   {
     "objectID": "User Guide.html#interactive-performance-analysis",
     "href": "User Guide.html#interactive-performance-analysis",
     "title": "User Guide",
     "section": "Interactive Performance Analysis",
-    "text": "Interactive Performance Analysis\nThe summary table presents a side-by-side comparison of algorithms, including:\nTotal number of clusters.\nPrecise modularity values.\nAutomated ranking based on modularity.\nQualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support.\nThis enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions."
+    "text": "Interactive Performance Analysis\nThe summary table presents a side-by-side comparison of algorithms, including:\n\nTotal number of clusters.\nPrecise modularity values.\nAutomated ranking based on modularity.\nQualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support.\n\nThis enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions."
   }
 ]

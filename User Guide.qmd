@@ -94,9 +94,9 @@ The graph will highlight the nodes (entities) and edges (connections) belonging 
 
 The bar plots on this page show: 
 
-Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is. 
+- Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is. 
 
-Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters. 
+- Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters. 
 
 This helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure. 
 
@@ -106,13 +106,13 @@ This helps quickly assess which algorithm creates the most modular, and thus pot
 
 The summary table presents a side-by-side comparison of algorithms, including: 
 
-Total number of clusters. 
+- Total number of clusters. 
 
-Precise modularity values. 
+- Precise modularity values. 
 
-Automated ranking based on modularity. 
+- Automated ranking based on modularity. 
 
-Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support. 
+- Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support. 
 
 This enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions. 
 
