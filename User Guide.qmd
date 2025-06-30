@@ -40,7 +40,7 @@ The communication network graph provides a structural snapshot of the network at
 
 This graph is essential for understanding not just when, but who is involved in suspicious activity, and how information or influence flows between individuals and organisations.
 
-A slicer has been incorporated on the left side of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time
+Date and time slicers have been incorporated at the top right of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time
 
 ## Deep Dive: The Messages Tab
 
@@ -63,11 +63,13 @@ This module allows you to explore clusters of entities within the Oceanus commun
 <img src="image/6.png" alt="6" style="max-width: 100%;"/>
 
 Step 1:   
+
 Use the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red). 
 
 <img src="image/7.png" alt="7" style="max-width: 100%;"/>
 
-Step 2:  
+Step 2: 
+
 Once a cluster is selected: 
 
 The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster. 
@@ -79,11 +81,13 @@ The graph will highlight the nodes (entities) and edges (connections) belonging 
 To apply the Infomap community detection algorithm on the network data to reveal high-resolution clusters, capturing fine-grained groupings of entities based on their communication patterns and structural positions. 
 
 Step 1:   
+
 Use the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red). 
 
 <img src="image/9.png" alt="9" style="max-width: 100%;"/>
 
 Step 2:  
+
 Once a cluster is selected: 
 
 The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster. 
