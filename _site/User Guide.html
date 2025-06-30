@@ -177,13 +177,13 @@ ul.task-list li input[type="checkbox"] {
 
 <p>The aim of our Shiny application is to identify suspicious communication patterns.</p>
 <p>The combination of the daily communication volume bar chart, hourly communication volume bar chart, and the hourly heat map is one way to detect temporal anomalies and shifts in communication behaviour.</p>
-<p><img src="image/Screenshot2025-06-15at3.24.51PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/1.png" alt="1" style="max-width: 100%;"></p>
 <p>Daily Communication Volume Bar Chart</p>
 <p>This chart displays the number of communications per day, overlaid with a red dashed trend line. It allows analysts to quickly spot days with unusually high or low activity, as well as to observe overall trends such as gradual increases or decreases in daily volume. A sudden spike or drop may indicate an event or coordinated action that warrants further attention.</p>
-<p><img src="image/Screenshot2025-06-15at3.30.17PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/2.png" alt="2" style="max-width: 100%;"></p>
 <p>Hourly Communication Volume Bar Chart</p>
 <p>By aggregating the number of communications by hour across the dataset and plotting a trend line, this chart reveals the typical daily rhythm of communications. Significant deviations from the expected hourly pattern, such as an unusual surge in late-night or early-morning activity, can be a red flag for out-of-pattern behaviour.</p>
-<p><img src="image/Screenshot2025-06-15at3.31.54PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/3.png" alt="3" style="max-width: 100%;"></p>
 <p>Hourly Communication Heat Map</p>
 <p>The heat map visualises the intensity of communications for each hour of each day, making it easy to spot recurring peaks or abrupt changes. Consistent high activity during certain hours may be normal, but a shift in these patterns, such as a new peak at an odd hour or an isolated day with unusual activity, can signal suspicious coordination or attempts to evade detection.</p>
 <p>Together, these temporal visualisations enable analysts to:</p>
@@ -192,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Pinpoint specific dates and hours where suspicious activity is concentrated.</li>
 <li>Observe whether suspicious patterns are isolated incidents or part of a broader trend.</li>
 </ol>
-<p><img src="image/Screenshot2025-06-15at3.34.37PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/4.png" alt="4" style="max-width: 100%;"></p>
 <p>Communication Network Graph</p>
 <p>The communication network graph provides a structural snapshot of the network at any selected date and time. By filtering the network to a specific window (identified as suspicious via the temporal charts), analysts can:</p>
 <ol type="1">
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>This graph is essential for understanding not just when, but who is involved in suspicious activity, and how information or influence flows between individuals and organisations.</p>
 <p>A slicer has been incorporated on the left side of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time</p>
-<p><img src="image/Screenshot2025-06-15at3.33.36PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/5.png" alt="5" style="max-width: 100%;"></p>
 <p>Deep Dive: The Messages Tab</p>
 <p>Once a suspicious period is identified through the above visualisations, the messages tab allows for targeted review of the actual message content exchanged during that window. This enables:</p>
 <ol type="1">
@@ -214,15 +214,41 @@ ul.task-list li input[type="checkbox"] {
 <p>Cluster</p>
 <p>The visualisation reveals the complex web of relationships in the Oceanus maritime environment around Nemo Reef. This network map serves as a digital detective board, showing how 33 key entities, both people and vessels, communicate and interact in this sensitive marine area.</p>
 <p>The Communication Patterns:</p>
-<p><img src="image/Screenshot2025-06-15at4.09.10PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/6.png" alt="6" style="max-width: 100%;"></p>
 <p>Central Hub Activity: Kelly and Sam emerge as information brokers, maintaining connections across multiple groups, potentially serving as intermediaries between legitimate and suspicious operations.</p>
 <p>Isolated Operations: Some entities like Northern Light and Mariner’s Dream operate with limited connections, suggesting either independent operations or intentional isolation.</p>
 <p>Bridge Connections: Certain individuals like Nadia Conti and Liam Thorne serve as critical bridges between official channels and operational networks.</p>
 <p>Cluster Analysis</p>
 <p>The dashboard presents a comparative analysis of different clustering algorithms applied to the Oceanus maritime network, aiming to uncover meaningful communities among people and vessels involved around Nemo Reef.</p>
-<p><img src="image/Screenshot2025-06-15at4.12.50PM.png" alt="test" style="max-width: 100%;"></p>
+<p><img src="image/7.png" alt="7" style="max-width: 100%;"></p>
 <p>The Entity Communication Network reveals that Nemo Reef operations exist within a complex ecosystem where environmental protection, legitimate tourism, and potentially suspicious activities intersect. The visualisation provides maritime authorities with a strategic overview to prioritise investigations, enhance monitoring of key relationships, and protect both marine conservation efforts and legitimate maritime commerce while identifying threats to the reef’s ecological integrity.</p>
 <p>The story this network tells: While legitimate conservation and tourism operations maintain their protective roles around Nemo Reef, a concerning undercurrent of potentially coordinated suspicious activities requires immediate investigative attention to preserve both maritime security and environmental protection in these critical waters.</p>
+<hr>
+<p>Louvain Clustering</p>
+<p>This module allows you to explore clusters of entities within the Oceanus communication network using the Louvain community detection algorithm. By doing this, you can identify tightly knit groups, uncover hidden patterns, and support investigation into the communication structure.</p>
+<p><img src="image/8.png" alt="8" style="max-width: 100%;"></p>
+<p>Step 1:<br>
+Use the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).</p>
+<p><img src="image/9.png" alt="9" style="max-width: 100%;"></p>
+<p>Step 2:<br>
+Once a cluster is selected:</p>
+<p>The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.</p>
+<p><img src="image/10.png" alt="10" style="max-width: 100%;"></p>
+<p>Infomap Clustering</p>
+<p>To apply the Infomap community detection algorithm on the network data to reveal high-resolution clusters, capturing fine-grained groupings of entities based on their communication patterns and structural positions.</p>
+<p>Step 1:<br>
+Use the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).</p>
+<p><img src="image/11.png" alt="11" style="max-width: 100%;"></p>
+<p>Step 2:<br>
+Once a cluster is selected:</p>
+<p>The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.</p>
+<p><img src="image/12.png" alt="12" style="max-width: 100%;"></p>
+<p>Algorithm Comparison</p>
+<p>The bar plots on this page show: Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is. Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters. This helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure. A screenshot of a graph</p>
+<p>AI-generated content may be incorrect., Picture</p>
+<p>Interactive Performance Analysis</p>
+<p>The summary table presents a side-by-side comparison of algorithms, including: Total number of clusters. Precise modularity values. Automated ranking based on modularity. Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support. This enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions. A screenshot of a computer</p>
+<p>AI-generated content may be incorrect., Picture</p>
 
 
 
