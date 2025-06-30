@@ -11,7 +11,7 @@ website:
         text: Proposal
       - href: xxx.qmd
         text: Poster
-      - href: xxx.qmd
+      - href: Meeting Minutes.qmd
         text: Meeting Minutes
       - text: Shiny
         menu:
