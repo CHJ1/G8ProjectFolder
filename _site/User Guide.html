@@ -150,8 +150,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#daily-communication-volume-bar-chart" id="toc-daily-communication-volume-bar-chart" class="nav-link active" data-scroll-target="#daily-communication-volume-bar-chart">Daily Communication Volume Bar Chart</a></li>
+  <li><a href="#hourly-communication-volume-bar-chart" id="toc-hourly-communication-volume-bar-chart" class="nav-link" data-scroll-target="#hourly-communication-volume-bar-chart">Hourly Communication Volume Bar Chart</a></li>
+  <li><a href="#hourly-communication-heat-map" id="toc-hourly-communication-heat-map" class="nav-link" data-scroll-target="#hourly-communication-heat-map">Hourly Communication Heat Map</a></li>
+  <li><a href="#communication-network-graph" id="toc-communication-network-graph" class="nav-link" data-scroll-target="#communication-network-graph">Communication Network Graph</a></li>
+  <li><a href="#deep-dive-the-messages-tab" id="toc-deep-dive-the-messages-tab" class="nav-link" data-scroll-target="#deep-dive-the-messages-tab">Deep Dive: The Messages Tab</a></li>
+  <li><a href="#louvain-clustering" id="toc-louvain-clustering" class="nav-link" data-scroll-target="#louvain-clustering">Louvain Clustering</a></li>
+  <li><a href="#infomap-clustering" id="toc-infomap-clustering" class="nav-link" data-scroll-target="#infomap-clustering">Infomap Clustering</a></li>
+  <li><a href="#algorithm-comparison" id="toc-algorithm-comparison" class="nav-link" data-scroll-target="#algorithm-comparison">Algorithm Comparison</a></li>
+  <li><a href="#interactive-performance-analysis" id="toc-interactive-performance-analysis" class="nav-link" data-scroll-target="#interactive-performance-analysis">Interactive Performance Analysis</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -175,16 +189,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The aim of our Shiny application is to identify suspicious communication patterns.</p>
-<p>The combination of the daily communication volume bar chart, hourly communication volume bar chart, and the hourly heat map is one way to detect temporal anomalies and shifts in communication behaviour.</p>
+<section id="daily-communication-volume-bar-chart" class="level2">
+<h2 class="anchored" data-anchor-id="daily-communication-volume-bar-chart">Daily Communication Volume Bar Chart</h2>
 <p><img src="image/1.png" alt="1" style="max-width: 100%;"></p>
-<p>Daily Communication Volume Bar Chart</p>
 <p>This chart displays the number of communications per day, overlaid with a red dashed trend line. It allows analysts to quickly spot days with unusually high or low activity, as well as to observe overall trends such as gradual increases or decreases in daily volume. A sudden spike or drop may indicate an event or coordinated action that warrants further attention.</p>
+</section>
+<section id="hourly-communication-volume-bar-chart" class="level2">
+<h2 class="anchored" data-anchor-id="hourly-communication-volume-bar-chart">Hourly Communication Volume Bar Chart</h2>
 <p><img src="image/2.png" alt="2" style="max-width: 100%;"></p>
-<p>Hourly Communication Volume Bar Chart</p>
 <p>By aggregating the number of communications by hour across the dataset and plotting a trend line, this chart reveals the typical daily rhythm of communications. Significant deviations from the expected hourly pattern, such as an unusual surge in late-night or early-morning activity, can be a red flag for out-of-pattern behaviour.</p>
+</section>
+<section id="hourly-communication-heat-map" class="level2">
+<h2 class="anchored" data-anchor-id="hourly-communication-heat-map">Hourly Communication Heat Map</h2>
 <p><img src="image/3.png" alt="3" style="max-width: 100%;"></p>
-<p>Hourly Communication Heat Map</p>
 <p>The heat map visualises the intensity of communications for each hour of each day, making it easy to spot recurring peaks or abrupt changes. Consistent high activity during certain hours may be normal, but a shift in these patterns, such as a new peak at an odd hour or an isolated day with unusual activity, can signal suspicious coordination or attempts to evade detection.</p>
 <p>Together, these temporal visualisations enable analysts to:</p>
 <ol type="1">
@@ -192,8 +209,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Pinpoint specific dates and hours where suspicious activity is concentrated.</li>
 <li>Observe whether suspicious patterns are isolated incidents or part of a broader trend.</li>
 </ol>
+</section>
+<section id="communication-network-graph" class="level2">
+<h2 class="anchored" data-anchor-id="communication-network-graph">Communication Network Graph</h2>
 <p><img src="image/5.png" alt="5" style="max-width: 100%;"></p>
-<p>Communication Network Graph</p>
 <p>The communication network graph provides a structural snapshot of the network at any selected date and time. By filtering the network to a specific window (identified as suspicious via the temporal charts), analysts can:</p>
 <ol type="1">
 <li><p>Visualise which entities are most active or central during periods of interest.</p></li>
@@ -202,8 +221,10 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>This graph is essential for understanding not just when, but who is involved in suspicious activity, and how information or influence flows between individuals and organisations.</p>
 <p>A slicer has been incorporated on the left side of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time</p>
+</section>
+<section id="deep-dive-the-messages-tab" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dive-the-messages-tab">Deep Dive: The Messages Tab</h2>
 <p><img src="image/4.png" alt="4" style="max-width: 100%;"></p>
-<p>Deep Dive: The Messages Tab</p>
 <p>Once a suspicious period is identified through the above visualisations, the messages tab allows for targeted review of the actual message content exchanged during that window. This enables:</p>
 <ol type="1">
 <li><p>Direct examination of the nature and context of communications, confirming whether the content aligns with legitimate business or hints at illicit coordination.</p></li>
@@ -211,8 +232,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Verification of relationships and roles among key entities, as messages often reveal hierarchy, influence, and intent.</p></li>
 </ol>
 <p>By correlating message content with network structure and temporal anomalies, analysts can move from pattern detection to concrete evidence gathering, supporting investigations into illegal or unethical activities.</p>
-<hr>
-<p>Louvain Clustering</p>
+</section>
+<section id="louvain-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="louvain-clustering">Louvain Clustering</h2>
 <p>This module allows you to explore clusters of entities within the Oceanus communication network using the Louvain community detection algorithm. By doing this, you can identify tightly knit groups, uncover hidden patterns, and support investigation into the communication structure.</p>
 <p><img src="image/6.png" alt="6" style="max-width: 100%;"></p>
 <p>Step 1:<br>
@@ -222,7 +244,9 @@ Use the dropdown menu labelled “Select Cluster” at the top of the screen (hi
 Once a cluster is selected:</p>
 <p>The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.</p>
 <p><img src="image/8.png" alt="8" style="max-width: 100%;"></p>
-<p>Infomap Clustering</p>
+</section>
+<section id="infomap-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="infomap-clustering">Infomap Clustering</h2>
 <p>To apply the Infomap community detection algorithm on the network data to reveal high-resolution clusters, capturing fine-grained groupings of entities based on their communication patterns and structural positions.</p>
 <p>Step 1:<br>
 Use the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).</p>
@@ -231,14 +255,27 @@ Use the dropdown menu labelled “Select Cluster” at the top of the screen (hi
 Once a cluster is selected:</p>
 <p>The graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.</p>
 <p><img src="image/10.png" alt="10" style="max-width: 100%;"></p>
-<p>Algorithm Comparison</p>
-<p>The bar plots on this page show: Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is. Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters. This helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure.</p>
+</section>
+<section id="algorithm-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="algorithm-comparison">Algorithm Comparison</h2>
+<p>The bar plots on this page show:</p>
+<p>Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is.</p>
+<p>Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters.</p>
+<p>This helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure.</p>
 <p><img src="image/11.png" alt="11" style="max-width: 100%;"></p>
-<p>Interactive Performance Analysis</p>
-<p>The summary table presents a side-by-side comparison of algorithms, including: Total number of clusters. Precise modularity values. Automated ranking based on modularity. Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support. This enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions.</p>
+</section>
+<section id="interactive-performance-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-performance-analysis">Interactive Performance Analysis</h2>
+<p>The summary table presents a side-by-side comparison of algorithms, including:</p>
+<p>Total number of clusters.</p>
+<p>Precise modularity values.</p>
+<p>Automated ranking based on modularity.</p>
+<p>Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support.</p>
+<p>This enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions.</p>
 <p><img src="image/12.png" alt="12" style="max-width: 100%;"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

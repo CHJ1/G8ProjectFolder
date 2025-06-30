@@ -109,6 +109,69 @@
     "href": "User Guide.html",
     "title": "User Guide",
     "section": "",
-    "text": "The aim of our Shiny application is to identify suspicious communication patterns.\nThe combination of the daily communication volume bar chart, hourly communication volume bar chart, and the hourly heat map is one way to detect temporal anomalies and shifts in communication behaviour.\n\nDaily Communication Volume Bar Chart\nThis chart displays the number of communications per day, overlaid with a red dashed trend line. It allows analysts to quickly spot days with unusually high or low activity, as well as to observe overall trends such as gradual increases or decreases in daily volume. A sudden spike or drop may indicate an event or coordinated action that warrants further attention.\n\nHourly Communication Volume Bar Chart\nBy aggregating the number of communications by hour across the dataset and plotting a trend line, this chart reveals the typical daily rhythm of communications. Significant deviations from the expected hourly pattern, such as an unusual surge in late-night or early-morning activity, can be a red flag for out-of-pattern behaviour.\n\nHourly Communication Heat Map\nThe heat map visualises the intensity of communications for each hour of each day, making it easy to spot recurring peaks or abrupt changes. Consistent high activity during certain hours may be normal, but a shift in these patterns, such as a new peak at an odd hour or an isolated day with unusual activity, can signal suspicious coordination or attempts to evade detection.\nTogether, these temporal visualisations enable analysts to:\n\nDetect when communication patterns deviate from the established norm.\nPinpoint specific dates and hours where suspicious activity is concentrated.\nObserve whether suspicious patterns are isolated incidents or part of a broader trend.\n\n\nCommunication Network Graph\nThe communication network graph provides a structural snapshot of the network at any selected date and time. By filtering the network to a specific window (identified as suspicious via the temporal charts), analysts can:\n\nVisualise which entities are most active or central during periods of interest.\nIdentify clusters, bridges, or unusually dense connections that may indicate coordinated groups or key facilitators.\nAssess the scale and reach of the network at critical moments, helping to distinguish between routine communication and orchestrated events.\n\nThis graph is essential for understanding not just when, but who is involved in suspicious activity, and how information or influence flows between individuals and organisations.\nA slicer has been incorporated on the left side of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time\n\nDeep Dive: The Messages Tab\nOnce a suspicious period is identified through the above visualisations, the messages tab allows for targeted review of the actual message content exchanged during that window. This enables:\n\nDirect examination of the nature and context of communications, confirming whether the content aligns with legitimate business or hints at illicit coordination.\nIdentification of code words, unusual instructions, or references to sensitive operations.\nVerification of relationships and roles among key entities, as messages often reveal hierarchy, influence, and intent.\n\nBy correlating message content with network structure and temporal anomalies, analysts can move from pattern detection to concrete evidence gathering, supporting investigations into illegal or unethical activities.\n\nLouvain Clustering\nThis module allows you to explore clusters of entities within the Oceanus communication network using the Louvain community detection algorithm. By doing this, you can identify tightly knit groups, uncover hidden patterns, and support investigation into the communication structure.\n\nStep 1:\nUse the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).\n\nStep 2:\nOnce a cluster is selected:\nThe graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.\n\nInfomap Clustering\nTo apply the Infomap community detection algorithm on the network data to reveal high-resolution clusters, capturing fine-grained groupings of entities based on their communication patterns and structural positions.\nStep 1:\nUse the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).\n\nStep 2:\nOnce a cluster is selected:\nThe graph will highlight the nodes (entities) and edges (connections) belonging to that cluster.\n\nAlgorithm Comparison\nThe bar plots on this page show: Number of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is. Modularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters. This helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure.\n\nInteractive Performance Analysis\nThe summary table presents a side-by-side comparison of algorithms, including: Total number of clusters. Precise modularity values. Automated ranking based on modularity. Qualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support. This enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions."
+    "text": "This chart displays the number of communications per day, overlaid with a red dashed trend line. It allows analysts to quickly spot days with unusually high or low activity, as well as to observe overall trends such as gradual increases or decreases in daily volume. A sudden spike or drop may indicate an event or coordinated action that warrants further attention."
+  },
+  {
+    "objectID": "User Guide.html#daily-communication-volume-bar-chart",
+    "href": "User Guide.html#daily-communication-volume-bar-chart",
+    "title": "User Guide",
+    "section": "",
+    "text": "This chart displays the number of communications per day, overlaid with a red dashed trend line. It allows analysts to quickly spot days with unusually high or low activity, as well as to observe overall trends such as gradual increases or decreases in daily volume. A sudden spike or drop may indicate an event or coordinated action that warrants further attention."
+  },
+  {
+    "objectID": "User Guide.html#hourly-communication-volume-bar-chart",
+    "href": "User Guide.html#hourly-communication-volume-bar-chart",
+    "title": "User Guide",
+    "section": "Hourly Communication Volume Bar Chart",
+    "text": "Hourly Communication Volume Bar Chart\n\nBy aggregating the number of communications by hour across the dataset and plotting a trend line, this chart reveals the typical daily rhythm of communications. Significant deviations from the expected hourly pattern, such as an unusual surge in late-night or early-morning activity, can be a red flag for out-of-pattern behaviour."
+  },
+  {
+    "objectID": "User Guide.html#hourly-communication-heat-map",
+    "href": "User Guide.html#hourly-communication-heat-map",
+    "title": "User Guide",
+    "section": "Hourly Communication Heat Map",
+    "text": "Hourly Communication Heat Map\n\nThe heat map visualises the intensity of communications for each hour of each day, making it easy to spot recurring peaks or abrupt changes. Consistent high activity during certain hours may be normal, but a shift in these patterns, such as a new peak at an odd hour or an isolated day with unusual activity, can signal suspicious coordination or attempts to evade detection.\nTogether, these temporal visualisations enable analysts to:\n\nDetect when communication patterns deviate from the established norm.\nPinpoint specific dates and hours where suspicious activity is concentrated.\nObserve whether suspicious patterns are isolated incidents or part of a broader trend."
+  },
+  {
+    "objectID": "User Guide.html#communication-network-graph",
+    "href": "User Guide.html#communication-network-graph",
+    "title": "User Guide",
+    "section": "Communication Network Graph",
+    "text": "Communication Network Graph\n\nThe communication network graph provides a structural snapshot of the network at any selected date and time. By filtering the network to a specific window (identified as suspicious via the temporal charts), analysts can:\n\nVisualise which entities are most active or central during periods of interest.\nIdentify clusters, bridges, or unusually dense connections that may indicate coordinated groups or key facilitators.\nAssess the scale and reach of the network at critical moments, helping to distinguish between routine communication and orchestrated events.\n\nThis graph is essential for understanding not just when, but who is involved in suspicious activity, and how information or influence flows between individuals and organisations.\nA slicer has been incorporated on the left side of the dashboard, allowing users to filter all visualisations by date and time. This interactive control enables analysts to dynamically adjust the temporal scope of the data displayed, making it easier to focus on specific periods of interest and observe how communication patterns and network structures change over time"
+  },
+  {
+    "objectID": "User Guide.html#deep-dive-the-messages-tab",
+    "href": "User Guide.html#deep-dive-the-messages-tab",
+    "title": "User Guide",
+    "section": "Deep Dive: The Messages Tab",
+    "text": "Deep Dive: The Messages Tab\n\nOnce a suspicious period is identified through the above visualisations, the messages tab allows for targeted review of the actual message content exchanged during that window. This enables:\n\nDirect examination of the nature and context of communications, confirming whether the content aligns with legitimate business or hints at illicit coordination.\nIdentification of code words, unusual instructions, or references to sensitive operations.\nVerification of relationships and roles among key entities, as messages often reveal hierarchy, influence, and intent.\n\nBy correlating message content with network structure and temporal anomalies, analysts can move from pattern detection to concrete evidence gathering, supporting investigations into illegal or unethical activities."
+  },
+  {
+    "objectID": "User Guide.html#louvain-clustering",
+    "href": "User Guide.html#louvain-clustering",
+    "title": "User Guide",
+    "section": "Louvain Clustering",
+    "text": "Louvain Clustering\nThis module allows you to explore clusters of entities within the Oceanus communication network using the Louvain community detection algorithm. By doing this, you can identify tightly knit groups, uncover hidden patterns, and support investigation into the communication structure.\n\nStep 1:\nUse the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).\n\nStep 2:\nOnce a cluster is selected:\nThe graph will highlight the nodes (entities) and edges (connections) belonging to that cluster."
+  },
+  {
+    "objectID": "User Guide.html#infomap-clustering",
+    "href": "User Guide.html#infomap-clustering",
+    "title": "User Guide",
+    "section": "Infomap Clustering",
+    "text": "Infomap Clustering\nTo apply the Infomap community detection algorithm on the network data to reveal high-resolution clusters, capturing fine-grained groupings of entities based on their communication patterns and structural positions.\nStep 1:\nUse the dropdown menu labelled “Select Cluster” at the top of the screen (highlighted in red).\n\nStep 2:\nOnce a cluster is selected:\nThe graph will highlight the nodes (entities) and edges (connections) belonging to that cluster."
+  },
+  {
+    "objectID": "User Guide.html#algorithm-comparison",
+    "href": "User Guide.html#algorithm-comparison",
+    "title": "User Guide",
+    "section": "Algorithm Comparison",
+    "text": "Algorithm Comparison\nThe bar plots on this page show:\nNumber of Clusters detected by each algorithm (left chart), helping to understand how granular or coarse each partitioning is.\nModularity Score (right chart), which measures the strength of community separation — higher scores indicate better defined, more internally cohesive clusters.\nThis helps quickly assess which algorithm creates the most modular, and thus potentially more meaningful, community structure."
+  },
+  {
+    "objectID": "User Guide.html#interactive-performance-analysis",
+    "href": "User Guide.html#interactive-performance-analysis",
+    "title": "User Guide",
+    "section": "Interactive Performance Analysis",
+    "text": "Interactive Performance Analysis\nThe summary table presents a side-by-side comparison of algorithms, including:\nTotal number of clusters.\nPrecise modularity values.\nAutomated ranking based on modularity.\nQualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support.\nThis enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions."
   }
 ]
