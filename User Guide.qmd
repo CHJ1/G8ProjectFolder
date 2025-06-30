@@ -1,5 +1,5 @@
 ---
-title: "Storyboard of Shiny Application"
+title: "User Guide"
 ---
 
 The aim of our Shiny application is to identify suspicious communication patterns.
