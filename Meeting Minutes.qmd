@@ -2,7 +2,7 @@
 title: "Meeting Minutes"
 ---
 
-## Meeting 1: Ideation & Delegation
+## Meeting 1: Review & Delegation of Tasks
 
 Date: 15 May 2025
 
@@ -10,26 +10,16 @@ Attendees: Han Jie, Roy
 
 Key Discussions:
 
--   Reviewed the overall scope of the mini-challenge and brainstormed possible analytical directions.
+-   Reviewed the overall scope of the mini-challenges and brainstormed possible analytical directions. We decided to work on mini-challenge 3.
 
--   Decided to split work by question areas:
-Han Jie:
-Q1: Exploratory Analysis
-Q3: Communication Pattern Analysis
-
-Roy:
-Q2: Interactive Network Visualisation, Algorithm Rankings & Interpretation
-
-
--   Agreed to use consistent R packages: tidygraph, ggraph, visNetwork for both analysis and visualization, referencing lessons on network analysis and interactive techniques.
+-   Decided to split work by questions:
+Han Jie shall work on Questions 1 and 3, while Roy will work on Question 2.
 
 Action Items:
 
 -   Each member to begin work on their assigned questions.
 
--   Dataset to be obtained and confirmed via eLearn submission.
-
-## Meeting 2: Code Integration & Standardisation
+## Meeting 2: Discussion on Technical Issues & Debugging
 
 Date: 31 May 2025
 
@@ -39,54 +29,43 @@ Key Discussions:
 
 -   Reviewed initial individual progress on respective questions.
 
--   Standardised:
-Data cleaning scripts (ensuring node and edge tables have consistent IDs and attributes, filtering out redundant edges).
-Function calls and plotting themes for reproducibility.
-
--   Discussed technical issues (e.g., code errors, dataset compatibility) and supported each other in debugging.
+-   Discussed technical issues and supported each other in debugging.
 
 Decisions:
 
--   Han Jie: To consolidate Q1 & Q3 outputs into a unified exploratory summary.
-
--   Roy: To build modular functions for network metrics and interactive visualisation, ensuring the Shiny app can integrate additional inputs easily.
+-   Han Jie: To consolidate Questions 1 & 3 outputs into a unified exploratory summary.
 
 Action Items:
 
--   Continue module development and resolve any integration issues.
+-   Continue to work on our tasks and help each other in resolving issues.
 
--   Share code and outputs via Netlify and internal file sharing.
+-   Share codes and outputs via Netlify and internal file sharing.
 
-## Meeting 3: Poster & Shiny App Presentation
+## Meeting 3: Deliverables for our Final Project
 
-Date: 28 June 2025
+Date: 15 June 2025
 
 Attendees: Han Jie, Roy
 
 Key Discussions:
 
--   Finalized poster layout:
-Left panel: Exploratory & communication pattern analysis (Q1 & Q3).
-Right panel: Interactive network insights (Q2), with rankings and key influence metrics highlighted.
-
--   Discussed Shiny app enhancements:
-Node filtering by role/group for easier insight exploration.
-Hover tooltips and algorithm toggle (centrality/community results).
-Dataset upload capability for graders to test scenarios.
+-   Finalised poster layout:
+Left panel: Exploratory & communication patterns analysis (Questions 1 & 3).
+Right panel: Interactive network insights (Question 2), with rankings and key influence metrics highlighted.
 
 -   Coordinated on user guide, poster, and minutes deliverables.
 
 Decisions:
 
--   Han Jie to lead on Shiny application and project website.
+-   Han Jie to lead on the development of Shiny application and project website.
 
 -   Roy to focus on poster and meeting minutes.
 
--   Both to review each other's modules for consistency and integration before final submission.
+-   Both to review each others' work for consistency before final submission.
 
 Action Items:
 
--   Complete and review all deliverables (poster, user guide, meeting minutes, website).
+-   Complete and review all deliverables.
 
--   Submit final project by 29 June 2025.
+-   Aim to submit final project by 2 July 2025.
 
