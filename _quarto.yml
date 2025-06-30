@@ -16,7 +16,7 @@ website:
       - text: Shiny
         menu:
           - text: User Guide
-            href: xxx.qmd
+            href: User Guide.qmd
           - text: Shiny App
             href: https://hjportfolio.shinyapps.io/Group8ProjectVASTChallenge2025MiniChallenge3/
       - text: GitHub
