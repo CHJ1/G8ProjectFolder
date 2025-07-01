@@ -12,8 +12,7 @@ Key Discussions:
 
 -   Reviewed the overall scope of the mini-challenges and brainstormed possible analytical directions. We decided to work on mini-challenge 3.
 
--   Decided to split work by questions:
-Han Jie shall work on Questions 1 and 3, while Roy will work on Question 2.
+-   Decided to split work by questions: Han Jie shall work on Questions 1 and 3, while Roy will work on Question 2.
 
 Action Items:
 
@@ -76,4 +75,3 @@ Action Items:
 -   Complete and review all deliverables.
 
 -   Aim to submit final project by 2 July 2025.
-
