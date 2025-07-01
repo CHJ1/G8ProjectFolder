@@ -173,5 +173,12 @@
     "title": "User Guide",
     "section": "Interactive Performance Analysis",
     "text": "Interactive Performance Analysis\nThe summary table presents a side-by-side comparison of algorithms, including:\n\nTotal number of clusters.\nPrecise modularity values.\nAutomated ranking based on modularity.\nQualitative efficiency rating (Excellent, Good, Fair) for intuitive decision support.\n\nThis enables interactive sorting and inspection to see which algorithm is most suitable under varying conditions."
+  },
+  {
+    "objectID": "Poster.html",
+    "href": "Poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "Click on the image to view full size."
   }
 ]
