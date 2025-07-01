@@ -9,7 +9,7 @@ website:
         text: Home
       - href: Proposal.qmd
         text: Proposal
-      - href: xxx.qmd
+      - href: Poster.qmd
         text: Poster
       - href: Meeting Minutes.qmd
         text: Meeting Minutes
